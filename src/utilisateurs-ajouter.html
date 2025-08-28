@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    
+
+    <div class="image-container">
+        <img src="img/logo/CRM_logo-horizontal-noir.png" alt="crm" >
+    </div>
+    
+<nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="roles.html">Roles</a></li>
+            <li><a href="roles-ajouter.html">Ajouter un role</a></li>
+            <li><a href="utilisateurs.html">Utilisateurs</a></li>
+             <li><a href="utilisateurs-ajouter.html">Ajouter un utilisateur</a></li>
+        </ul>
+    </nav>
+
+    
+<h1 class="ajout">Ajouter un utilisateur</h1>
+
+
+<!-- Formulaire pour créer un utilisateur-->
+<form action="utilisateurs.html" method="post" class="user-form" id="formulaire">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="statut">Statut :</label>
+    <select id="statut" name="statut" required>
+        <option value="-------">------</option>
+        <option value="usager">Usager</option>
+        <option value="encadrant">Encadrant</option>
+        <option value="administrateur">Administrateur</option>
+    </select>
+
+     <label for="Section">Section :</label>
+    <select id="section" name="section" required>
+        <option value="-------">------</option>
+        <option value="CDA">CDA</option>
+        <option value="DWWN">DWWN</option>
+        <option value="Réseau">Réseau</option>
+        <option value="Employé">Employé</option>
+    </select>
+
+    <label for="IP">IP :</label>
+    <input type="text" id="IP" name="IP" required>
+
+    <input type="submit" value="Ajouter" class="submit-button">
+</form>
+<footer class ="footer">
+     <h2>© 2025 FG Créations</h2>
+
+</footer>
+</body>
+
+</html>
