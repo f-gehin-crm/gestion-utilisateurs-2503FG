@@ -52,3 +52,42 @@
     }
 }
 import { Utilisateur } from 'Utilisateur.js';
+
+
+/** bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb */
+/**
+ * Valide une adresse email
+ * @param {string} email - L'email à vérifier
+ * @returns {Object} - { valide: boolean, erreur: string|null }
+ */
+function validerEmail(email) {
+  // Vérifie que l'entrée n'est pas vide
+  if (!email || email.trim() === "") {
+    return { valide: false, erreur: "L'adresse email est vide." };
+  }
+
+  // Vérifie le type
+  if (typeof email !== "string") {
+    return { valide: false, erreur: "L'adresse email doit être une chaîne de caractères." };
+  }
+
+  // Regex pour une validation générale d'email
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!regexEmail.test(email)) {
+    return { valide: false, erreur: "Format de l'adresse email invalide." };
+  }
+
+  // Tout est bon
+  return { valide: true, erreur: null };
+}
+
+// Exemple d'utilisation
+console.log(validerEmail("test@example.com")); 
+// { valide: true, erreur: null }
+
+console.log(validerEmail("mauvais-email"));
+// { valide: false, erreur: "Format de l'adresse email invalide." }
+
+console.log(validerEmail(""));
+// { valide: false, erreur: "L'adresse email est vide." }

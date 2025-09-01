@@ -40,10 +40,31 @@ export class Validation {
             throw new Error("Email invalide");
         }
     }
+/**
+     * Valide un statut
+     * @param {String} _statut Le statut à valider
+     */
+    validerStatut(_statut) {
+        const statuts = ["Administrateur", "Utilisateur", "Invité"];
+        if (!statuts.includes(_statut)) {
+            throw new Error("Statut invalide");
+        }
+    }
 
+    /**
+     * Valide une section
+     * @param {String} _section La section à valider 
+     *            
 
-
-
+    /**fonction qui valide le formulaire complet */
+    formulaireOk(_nom, _prenom, _email, _statut, _section) {
+        this.validerNom(_nom);
+        this.validerPrenom(_prenom);
+        this.validerEmail(_email);
+        this.validerStatut(_statut);
+        this.validerSection(_section);
+    }       
+    
     
       
 

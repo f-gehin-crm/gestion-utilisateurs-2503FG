@@ -25,8 +25,12 @@ export class Utilisateur
     }       
 
     estValide() {
+        try {
         let validation = new Validation();
-        validation.validerNombrePositif(this.prixHT);        
+        validation.formulaireOk(this.nom, this.prenom, this.email, this.statut, this.section);        } 
+        catch (error) {
+            throw error;
+        }
     }
 
     /**
